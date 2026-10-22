@@ -1,0 +1,202 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		200000000000000000000001 /* PhotoAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000001 /* PhotoAsset.swift */; };
+		200000000000000000000002 /* PhotoSelectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000002 /* PhotoSelectApp.swift */; };
+		200000000000000000000003 /* DecisionPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000003 /* DecisionPersistence.swift */; };
+		200000000000000000000004 /* FolderBookmarkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000004 /* FolderBookmarkStore.swift */; };
+		200000000000000000000005 /* ImagePipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000005 /* ImagePipeline.swift */; };
+		200000000000000000000006 /* PhotoLibraryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000006 /* PhotoLibraryStore.swift */; };
+		200000000000000000000007 /* AsyncPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000007 /* AsyncPhotoView.swift */; };
+		200000000000000000000008 /* DecisionBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000008 /* DecisionBadge.swift */; };
+		200000000000000000000009 /* FilmstripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000009 /* FilmstripView.swift */; };
+		20000000000000000000000A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000A /* MainView.swift */; };
+		20000000000000000000000B /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000B /* PreviewView.swift */; };
+		20000000000000000000000C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000C /* SettingsView.swift */; };
+		20000000000000000000000D /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000D /* SidebarView.swift */; };
+		20000000000000000000000E /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000E /* TopBar.swift */; };
+		20000000000000000000000F /* DecisionPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000F /* DecisionPersistenceTests.swift */; };
+		200000000000000000000010 /* PhotoLibraryStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000010 /* PhotoLibraryStoreTests.swift */; };
+		200000000000000000000011 /* ImagePipelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000015 /* ImagePipelineTests.swift */; };
+		200000000000000000000012 /* PhotoMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000016 /* PhotoMetadata.swift */; };
+		200000000000000000000013 /* PhotoMetadataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000017 /* PhotoMetadataReader.swift */; };
+		200000000000000000000014 /* LiquidGlassSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000018 /* LiquidGlassSurface.swift */; };
+		200000000000000000000015 /* MetadataInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000019 /* MetadataInspectorView.swift */; };
+		200000000000000000000016 /* PhotoMetadataReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000001A /* PhotoMetadataReaderTests.swift */; };
+		200000000000000000000017 /* HelpCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000001B /* HelpCenterView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		300000000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000000000000000000006;
+			remoteInfo = PhotoSelect;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		000000000000000000000008 /* PhotoSelect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoSelect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000000000000000000009 /* PhotoSelectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoSelectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		100000000000000000000001 /* PhotoAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/PhotoAsset.swift; sourceTree = "<group>"; };
+		100000000000000000000002 /* PhotoSelectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectApp.swift; sourceTree = "<group>"; };
+		100000000000000000000003 /* DecisionPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/DecisionPersistence.swift; sourceTree = "<group>"; };
+		100000000000000000000004 /* FolderBookmarkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/FolderBookmarkStore.swift; sourceTree = "<group>"; };
+		100000000000000000000005 /* ImagePipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/ImagePipeline.swift; sourceTree = "<group>"; };
+		100000000000000000000006 /* PhotoLibraryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stores/PhotoLibraryStore.swift; sourceTree = "<group>"; };
+		100000000000000000000007 /* AsyncPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Components/AsyncPhotoView.swift; sourceTree = "<group>"; };
+		100000000000000000000008 /* DecisionBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Components/DecisionBadge.swift; sourceTree = "<group>"; };
+		100000000000000000000009 /* FilmstripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/FilmstripView.swift; sourceTree = "<group>"; };
+		10000000000000000000000A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/MainView.swift; sourceTree = "<group>"; };
+		10000000000000000000000B /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/PreviewView.swift; sourceTree = "<group>"; };
+		10000000000000000000000C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/SettingsView.swift; sourceTree = "<group>"; };
+		10000000000000000000000D /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/SidebarView.swift; sourceTree = "<group>"; };
+		10000000000000000000000E /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/TopBar.swift; sourceTree = "<group>"; };
+		10000000000000000000000F /* DecisionPersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionPersistenceTests.swift; sourceTree = "<group>"; };
+		100000000000000000000010 /* PhotoLibraryStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryStoreTests.swift; sourceTree = "<group>"; };
+		100000000000000000000011 /* PhotoSelect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhotoSelect.entitlements; sourceTree = "<group>"; };
+		100000000000000000000012 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = project.yml; sourceTree = "<group>"; };
+		100000000000000000000013 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		100000000000000000000014 /* PRODUCT_SPEC.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PRODUCT_SPEC.md; sourceTree = "<group>"; };
+		100000000000000000000015 /* ImagePipelineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePipelineTests.swift; sourceTree = "<group>"; };
+		100000000000000000000016 /* PhotoMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/PhotoMetadata.swift; sourceTree = "<group>"; };
+		100000000000000000000017 /* PhotoMetadataReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/PhotoMetadataReader.swift; sourceTree = "<group>"; };
+		100000000000000000000018 /* LiquidGlassSurface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Components/LiquidGlassSurface.swift; sourceTree = "<group>"; };
+		100000000000000000000019 /* MetadataInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/MetadataInspectorView.swift; sourceTree = "<group>"; };
+		10000000000000000000001A /* PhotoMetadataReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMetadataReaderTests.swift; sourceTree = "<group>"; };
+		10000000000000000000001B /* HelpCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/HelpCenterView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00000000000000000000000B /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		00000000000000000000000E /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		000000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000013 /* README.md */,
+				100000000000000000000014 /* PRODUCT_SPEC.md */,
+				100000000000000000000012 /* project.yml */,
+				000000000000000000000004 /* PhotoSelect */,
+				000000000000000000000005 /* PhotoSelectTests */,
+				000000000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		000000000000000000000003 /* Products */ = {isa = PBXGroup; children = (000000000000000000000008 /* PhotoSelect.app */, 000000000000000000000009 /* PhotoSelectTests.xctest */); name = Products; sourceTree = "<group>"; };
+		000000000000000000000004 /* PhotoSelect */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000002 /* PhotoSelectApp.swift */,
+				100000000000000000000001 /* PhotoAsset.swift */,
+				100000000000000000000016 /* PhotoMetadata.swift */,
+				100000000000000000000003 /* DecisionPersistence.swift */,
+				100000000000000000000004 /* FolderBookmarkStore.swift */,
+				100000000000000000000005 /* ImagePipeline.swift */,
+				100000000000000000000017 /* PhotoMetadataReader.swift */,
+				100000000000000000000006 /* PhotoLibraryStore.swift */,
+				100000000000000000000007 /* AsyncPhotoView.swift */,
+				100000000000000000000008 /* DecisionBadge.swift */,
+				100000000000000000000018 /* LiquidGlassSurface.swift */,
+				100000000000000000000009 /* FilmstripView.swift */,
+				10000000000000000000000A /* MainView.swift */,
+				100000000000000000000019 /* MetadataInspectorView.swift */,
+				10000000000000000000001B /* HelpCenterView.swift */,
+				10000000000000000000000B /* PreviewView.swift */,
+				10000000000000000000000C /* SettingsView.swift */,
+				10000000000000000000000D /* SidebarView.swift */,
+				10000000000000000000000E /* TopBar.swift */,
+				100000000000000000000011 /* PhotoSelect.entitlements */,
+			);
+			path = PhotoSelect;
+			sourceTree = "<group>";
+		};
+		000000000000000000000005 /* PhotoSelectTests */ = {isa = PBXGroup; children = (10000000000000000000000F /* DecisionPersistenceTests.swift */, 100000000000000000000015 /* ImagePipelineTests.swift */, 10000000000000000000001A /* PhotoMetadataReaderTests.swift */, 100000000000000000000010 /* PhotoLibraryStoreTests.swift */); path = PhotoSelectTests; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		000000000000000000000006 /* PhotoSelect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 400000000000000000000002 /* Build configuration list for PBXNativeTarget "PhotoSelect" */;
+			buildPhases = (00000000000000000000000A /* Sources */, 00000000000000000000000B /* Frameworks */, 00000000000000000000000C /* Resources */);
+			buildRules = ();
+			dependencies = ();
+			name = PhotoSelect;
+			productName = PhotoSelect;
+			productReference = 000000000000000000000008 /* PhotoSelect.app */;
+			productType = "com.apple.product-type.application";
+		};
+		000000000000000000000007 /* PhotoSelectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 400000000000000000000003 /* Build configuration list for PBXNativeTarget "PhotoSelectTests" */;
+			buildPhases = (00000000000000000000000D /* Sources */, 00000000000000000000000E /* Frameworks */, 00000000000000000000000F /* Resources */);
+			buildRules = ();
+			dependencies = (300000000000000000000002 /* PBXTargetDependency */);
+			name = PhotoSelectTests;
+			productName = PhotoSelectTests;
+			productReference = 000000000000000000000009 /* PhotoSelectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		000000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 2660; LastUpgradeCheck = 2660; TargetAttributes = {000000000000000000000006 = {CreatedOnToolsVersion = 26.6; }; 000000000000000000000007 = {CreatedOnToolsVersion = 26.6; TestTargetID = 000000000000000000000006; }; }; };
+			buildConfigurationList = 400000000000000000000001 /* Build configuration list for PBXProject "PhotoSelect" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (en, Base);
+			mainGroup = 000000000000000000000002;
+			productRefGroup = 000000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (000000000000000000000006 /* PhotoSelect */, 000000000000000000000007 /* PhotoSelectTests */);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00000000000000000000000C /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		00000000000000000000000F /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00000000000000000000000A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (200000000000000000000001, 200000000000000000000002, 200000000000000000000003, 200000000000000000000004, 200000000000000000000005, 200000000000000000000006, 200000000000000000000007, 200000000000000000000008, 200000000000000000000009, 20000000000000000000000A, 20000000000000000000000B, 20000000000000000000000C, 20000000000000000000000D, 20000000000000000000000E, 200000000000000000000012, 200000000000000000000013, 200000000000000000000014, 200000000000000000000015, 200000000000000000000017);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00000000000000000000000D /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (20000000000000000000000F, 200000000000000000000011, 200000000000000000000016, 200000000000000000000010); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		300000000000000000000002 /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = 000000000000000000000006 /* PhotoSelect */; targetProxy = 300000000000000000000001 /* PBXContainerItemProxy */; };
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		500000000000000000000001 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = dwarf; ENABLE_TESTABILITY = YES; GCC_C_LANGUAGE_STANDARD = gnu17; MACOSX_DEPLOYMENT_TARGET = 14.0; ONLY_ACTIVE_ARCH = YES; SDKROOT = macosx; SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; }; name = Debug; };
+		500000000000000000000002 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; COPY_PHASE_STRIP = YES; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; ENABLE_NS_ASSERTIONS = NO; GCC_C_LANGUAGE_STANDARD = gnu17; MACOSX_DEPLOYMENT_TARGET = 14.0; SDKROOT = macosx; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_OPTIMIZATION_LEVEL = "-O"; VALIDATE_PRODUCT = YES; }; name = Release; };
+		500000000000000000000003 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_ENTITLEMENTS = PhotoSelect/PhotoSelect.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; ENABLE_APP_SANDBOX = YES; ENABLE_HARDENED_RUNTIME = YES; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = PhotoSelect; INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography"; INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 PhotoSelect"; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks"; MARKETING_VERSION = 0.1.0; PRODUCT_BUNDLE_IDENTIFIER = com.example.PhotoSelect; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.0; }; name = Debug; };
+		500000000000000000000004 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_ENTITLEMENTS = PhotoSelect/PhotoSelect.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; ENABLE_APP_SANDBOX = YES; ENABLE_HARDENED_RUNTIME = YES; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = PhotoSelect; INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography"; INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 PhotoSelect"; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks"; MARKETING_VERSION = 0.1.0; PRODUCT_BUNDLE_IDENTIFIER = com.example.PhotoSelect; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.0; }; name = Release; };
+		500000000000000000000005 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {BUNDLE_LOADER = "$(TEST_HOST)"; CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks"; PRODUCT_BUNDLE_IDENTIFIER = com.example.PhotoSelectTests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoSelect.app/Contents/MacOS/PhotoSelect"; }; name = Debug; };
+		500000000000000000000006 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {BUNDLE_LOADER = "$(TEST_HOST)"; CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks"; PRODUCT_BUNDLE_IDENTIFIER = com.example.PhotoSelectTests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoSelect.app/Contents/MacOS/PhotoSelect"; }; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		400000000000000000000001 /* Build configuration list for PBXProject "PhotoSelect" */ = {isa = XCConfigurationList; buildConfigurations = (500000000000000000000001 /* Debug */, 500000000000000000000002 /* Release */); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		400000000000000000000002 /* Build configuration list for PBXNativeTarget "PhotoSelect" */ = {isa = XCConfigurationList; buildConfigurations = (500000000000000000000003 /* Debug */, 500000000000000000000004 /* Release */); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		400000000000000000000003 /* Build configuration list for PBXNativeTarget "PhotoSelectTests" */ = {isa = XCConfigurationList; buildConfigurations = (500000000000000000000005 /* Debug */, 500000000000000000000006 /* Release */); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = 000000000000000000000001 /* Project object */;
+}

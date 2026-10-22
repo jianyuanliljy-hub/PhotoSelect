@@ -1,0 +1,42 @@
+name: PhotoSelect
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    macOS: "14.0"
+settings:
+  base:
+    SWIFT_VERSION: 5.0
+    CURRENT_PROJECT_VERSION: 1
+    MARKETING_VERSION: 0.1.0
+targets:
+  PhotoSelect:
+    type: application
+    platform: macOS
+    sources:
+      - PhotoSelect
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.PhotoSelect
+        PRODUCT_NAME: PhotoSelect
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: PhotoSelect
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.photography
+        INFOPLIST_KEY_NSHumanReadableCopyright: Copyright © 2026 PhotoSelect
+        CODE_SIGN_ENTITLEMENTS: PhotoSelect/PhotoSelect.entitlements
+        ENABLE_APP_SANDBOX: YES
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_STYLE: Automatic
+    entitlements:
+      path: PhotoSelect/PhotoSelect.entitlements
+  PhotoSelectTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - PhotoSelectTests
+    dependencies:
+      - target: PhotoSelect
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.PhotoSelectTests
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGN_STYLE: Automatic
