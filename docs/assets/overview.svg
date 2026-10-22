@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="880" viewBox="0 0 1440 880" role="img" aria-labelledby="title desc">
+  <title id="title">PhotoSelect interface illustration</title>
+  <desc id="desc">A native Mac culling workspace, illustrated with a synthetic mountain landscape. Sidebar filters and four keyboard decisions surround a large photo canvas. This is an illustration, not an application screenshot.</desc>
+  <defs>
+    <linearGradient id="paper" x2="1" y2="1"><stop stop-color="#eceee7"/><stop offset="1" stop-color="#e2e5df"/></linearGradient>
+    <linearGradient id="sky" x2="0.3" y2="1"><stop stop-color="#bbc9c6"/><stop offset="0.68" stop-color="#e4dccc"/><stop offset="1" stop-color="#eae0c9"/></linearGradient>
+    <linearGradient id="near" x2="0.4" y2="1"><stop stop-color="#3b5652"/><stop offset="1" stop-color="#1c3434"/></linearGradient>
+    <linearGradient id="water" x2="0" y2="1"><stop stop-color="#a0b6ac"/><stop offset="1" stop-color="#496b64"/></linearGradient>
+    <clipPath id="window"><rect x="64" y="62" width="1312" height="714" rx="16"/></clipPath>
+    <clipPath id="photo"><rect x="376" y="156" width="936" height="560" rx="2"/></clipPath>
+    <filter id="shadow" x="-10%" y="-15%" width="120%" height="140%"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#28352d" flood-opacity="0.14"/></filter>
+    <style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif} .label{fill:#555d57;font-size:15px}.small{fill:#828982;font-size:12px}.light{fill:#e1e6df;font-size:13px}</style>
+  </defs>
+  <rect width="1440" height="880" rx="24" fill="url(#paper)"/>
+  <rect x="64" y="62" width="1312" height="714" rx="16" fill="#f5f6f2" filter="url(#shadow)"/>
+  <g clip-path="url(#window)">
+    <rect x="64" y="62" width="1312" height="56" fill="#fafbf8"/>
+    <circle cx="87" cy="90" r="5" fill="#e8b8ae"/><circle cx="106" cy="90" r="5" fill="#e5d19b"/><circle cx="125" cy="90" r="5" fill="#b4ccad"/>
+    <path d="m171 83-7 7 7 7m24-14 7 7-7 7" fill="none" stroke="#90988f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="230" y="96" font-size="16" font-weight="600" fill="#343d35">PhotoSelect</text>
+    <text x="844" y="86" text-anchor="middle" font-size="13" font-weight="600" fill="#414b42">Unreviewed</text>
+    <text x="844" y="104" text-anchor="middle" class="small">24 of 240 · 120 reviewed</text>
+    <g fill="none" stroke="#818a81" stroke-width="1.5" stroke-linejoin="round"><rect x="1247" y="82" width="17" height="15" rx="2"/><path d="M1247 92h17m27-8v-5h5m12 0h5v5m-22 9v5h5m12 0h5v-5"/></g>
+    <rect x="64" y="118" width="242" height="658" fill="#f1f3ed"/>
+    <path d="M306 118v658" stroke="#dce1d8"/>
+    <text x="88" y="156" class="small" font-weight="600" letter-spacing="1.5">SHOOT</text>
+    <text x="116" y="194" class="label">All Photos</text>
+    <rect x="78" y="211" width="214" height="38" rx="7" fill="#dfe5d9"/>
+    <text x="116" y="236" font-size="15" font-weight="600" fill="#3c493d">Unreviewed</text>
+    <g fill="none" stroke="#788575" stroke-width="1.5"><rect x="91" y="182" width="15" height="12" rx="2"/><path d="m92 192 5-5 4 4 4-3"/><circle cx="99" cy="229" r="7" stroke-dasharray="2 2"/></g>
+    <text x="275" y="194" text-anchor="end" class="small">360</text><text x="275" y="236" text-anchor="end" font-size="12" fill="#5e6b59">240</text>
+    <text x="88" y="294" class="small" font-weight="600" letter-spacing="1.5">PICKS</text>
+    <g class="label"><text x="116" y="332">Hero</text><text x="116" y="374">Select</text><text x="116" y="416">Keep</text><text x="116" y="486">Rejected</text></g>
+    <g class="small" text-anchor="end"><text x="275" y="332">12</text><text x="275" y="374">28</text><text x="275" y="416">56</text><text x="275" y="486">24</text></g>
+    <g fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="m99 318 2 6 6 2-6 2-2 6-2-6-6-2 6-2z" stroke="#8b7d9e"/><path d="m99 360 2.4 5 5.6.8-4 4 .9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-4 5.6-.8z" stroke="#b18f52"/><circle cx="99" cy="410" r="7" stroke="#718e6b"/><path d="m96 410 2 2 4-5" stroke="#718e6b"/><path d="M94 478h10l-1 11h-8zm-2-3h14m-9-3h4" stroke="#a18179"/></g>
+    <path d="M88 681h194" stroke="#dbe1d5"/>
+    <text x="88" y="707" font-size="13" fill="#626e5d">Alpine light</text><text x="88" y="726" class="small">360 photographs</text>
+    <rect x="85" y="743" width="200" height="24" rx="5" fill="#e4e9df"/><text x="185" y="759" text-anchor="middle" font-size="11" fill="#5e6b59">Change Folder…</text>
+    <rect x="307" y="118" width="1069" height="658" fill="#141a17"/>
+    <g clip-path="url(#photo)">
+      <rect x="376" y="156" width="936" height="560" fill="url(#sky)"/>
+      <circle cx="1109" cy="260" r="40" fill="#f0e5c8" opacity="0.8"/>
+      <path d="M376 478 479 394 553 425 682 288 746 353 838 248 1008 448 1121 356 1312 478V716H376Z" fill="#94a6a0"/>
+      <path d="m612 364 70-76 38 38-29-7-18 21-11-11-26 40Zm174-52 52-64 60 71-40-22-20-27-18 30Z" fill="#e0e3da"/>
+      <path d="M376 523 474 456 569 475 722 386 804 470 900 359 1037 491 1146 424 1312 520V716H376Z" fill="#647e76"/>
+      <path d="M376 561 571 533 689 553 837 527 1026 555 1199 529 1312 548V716H376Z" fill="url(#water)"/>
+      <g fill="none" stroke="#b3c4b4" opacity="0.32"><path d="M562 581h332m-105 16h324M469 624h378m62 21h277m-662 26h360m-184 20h552"/></g>
+      <path d="M376 452 446 488 489 511 535 561 591 716H376Z" fill="url(#near)"/>
+      <path d="m1136 591 49-60 127-84v269H998Z" fill="#29473f"/>
+      <path d="m376 653 74-16 70 27 44 52H376Z" fill="#182f2b"/>
+    </g>
+    <rect x="327" y="137" width="224" height="32" rx="7" fill="#202924" stroke="#3b453e"/>
+    <text x="340" y="158" font-size="12" fill="#d5ddd1">DSC_0144.RAW</text><path d="M459 146v13" stroke="#5d695e"/><text x="473" y="158" font-size="12" fill="#a9b5a7">24 / 240</text>
+    <rect x="576" y="723" width="527" height="39" rx="9" fill="#28312b" stroke="#424c43"/>
+    <g font-size="12" fill="#d4dbcf">
+      <rect x="590" y="732" width="23" height="21" rx="4" fill="#3d473e"/><text x="601.5" y="747" text-anchor="middle">1</text><text x="626" y="747">Reject</text>
+      <rect x="720" y="732" width="23" height="21" rx="4" fill="#3d473e"/><text x="731.5" y="747" text-anchor="middle">2</text><text x="756" y="747">Keep</text>
+      <rect x="845" y="732" width="23" height="21" rx="4" fill="#3d473e"/><text x="856.5" y="747" text-anchor="middle">3</text><text x="881" y="747">Select</text>
+      <rect x="977" y="732" width="23" height="21" rx="4" fill="#3d473e"/><text x="988.5" y="747" text-anchor="middle">4</text><text x="1013" y="747">Hero</text>
+    </g>
+    <rect x="1267" y="733" width="87" height="27" rx="13" fill="#202924" stroke="#424c43"/><text x="1310" y="751" text-anchor="middle" class="light">−   Fit   +</text>
+  </g>
+  <text x="72" y="825" font-size="12" fill="#6f7b6c" letter-spacing="2.2">A QUIET SPACE. A CLEAR DECISION.</text>
+  <text x="1368" y="825" text-anchor="end" font-size="11" fill="#7d8979" letter-spacing="1.3">PHOTOSELECT / INTERFACE ILLUSTRATION</text>
+</svg>

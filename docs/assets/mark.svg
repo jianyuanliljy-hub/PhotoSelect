@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title id="title">PhotoSelect — a frame, a focus, a choice</title>
+  <rect x="2" y="2" width="92" height="92" rx="24" fill="#202521"/>
+  <g fill="none" stroke="#f2f1e8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M34 25H25v12M62 25h9v12M25 59v12h12M71 59v12H59"/>
+    <circle cx="48" cy="48" r="13"/>
+  </g>
+  <circle cx="48" cy="48" r="4" fill="#d8b779"/>
+  <path d="m59 65 5 5 10-12" fill="none" stroke="#d8b779" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
