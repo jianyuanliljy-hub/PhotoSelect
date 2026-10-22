@@ -1,23 +1,25 @@
 # Contributing
 
-欢迎提交可复现的问题、真实素材下的体验反馈，以及范围明确的修复。当前优先把单图选片流程做稳：打开、检查、决定、下一张、复查。
+**English** · [简体中文](CONTRIBUTING.zh-CN.md)
 
-## 开始之前
+Reproducible bug reports, feedback from real shoots, and focused fixes are welcome. The current priority is a reliable single-photo loop: open, inspect, decide, advance, and review.
 
-阅读 [AGENTS.md](AGENTS.md)、[产品说明](PRODUCT_SPEC.md)、[v2 审核记录](V2_AUDIT.md) 和[开发指南](docs/DEVELOPMENT.md)。产品尚在 MVP 阶段，大功能先通过 Issue 讨论使用场景和取舍。
+## Before you start
 
-## 报告问题
+Read [AGENTS.md](AGENTS.md), the [product specification](PRODUCT_SPEC.md), the [v2 audit](V2_AUDIT.md), and the [development guide](docs/DEVELOPMENT.md). The product is still an MVP. Discuss larger features in an issue first, including the user need and tradeoffs.
 
-请提供 macOS / Xcode 版本、提交号、素材格式和数量、最短复现步骤、预期行为与实际行为。性能问题还应注明相机型号、图像尺寸、磁盘类型，以及冷启动还是缓存后的浏览。
+## Report a problem
 
-附图与日志前请去除人脸、GPS、个人目录和其他敏感信息。需要样本时，优先使用自制、可公开授权的素材。文件丢失或未经确认的文件操作等安全问题，请先阅读 [SECURITY.md](SECURITY.md)。
+Include your macOS and Xcode versions, commit, image formats and count, minimal reproduction steps, expected behavior, and actual behavior. For performance reports, add the camera model, image dimensions, storage type, and whether browsing was cold or cached.
 
-## 提交改动
+Remove faces, GPS coordinates, personal paths, and other sensitive information from screenshots and logs. Use synthetic or appropriately licensed samples when possible. For unexpected file operations or data-loss risks, read [SECURITY.md](SECURITY.md) first.
 
-- 一个改动解决一个问题，保持原生 SwiftUI / AppKit 交互，避免加入没有当前需求的依赖和框架。
-- 修改导航、筛选、持久化或文件操作时，补充对应回归测试，并使用可丢弃副本做文件安全验收。
-- 运行[构建与测试](docs/DEVELOPMENT.md#build)，如遇环境阻断，记录具体错误；区分编译成功、测试通过和手动验收。
-- PR 说明发生了什么、原因、修改范围、验证方式与剩余限制。涉及界面时附上不含私人照片的截图。
-- 不提交原片、个人测试截图、签名材料、本机 Xcode 状态或构建产物。
+## Submit a change
 
-当前暂未选定开源许可证。贡献或复用代码前，请先与维护者确认授权条款。
+- Keep each change focused on one problem. Preserve native SwiftUI / AppKit interactions and avoid dependencies or frameworks without a concrete need.
+- Add targeted regression coverage for navigation, filtering, persistence, and file operations. Verify file behavior using disposable copies.
+- Run the [build and tests](docs/DEVELOPMENT.md#build). Record exact environment blockers, and distinguish compilation, passing tests, and manual verification.
+- Explain the problem, cause, change, validation, and remaining limitations in the PR. Include screenshots without private photographs for interface changes.
+- Keep originals, personal test screenshots, signing material, local Xcode state, and build output out of commits.
+
+A license has not been selected yet. Confirm contribution and reuse terms with the maintainer before contributing or reusing code.

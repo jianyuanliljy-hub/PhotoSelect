@@ -1,18 +1,20 @@
 # Development
 
-PhotoSelect 使用 Swift / SwiftUI 与 AppKit，目标系统为 macOS 14+，当前无第三方运行依赖。请先阅读 [AGENTS.md](../AGENTS.md)、[产品说明](../PRODUCT_SPEC.md) 和 [v2 审核记录](../V2_AUDIT.md)。
+**English** · [简体中文](DEVELOPMENT.zh-CN.md)
+
+PhotoSelect uses Swift / SwiftUI and AppKit, targets macOS 14+, and has no third-party runtime dependencies. Read [AGENTS.md](../AGENTS.md), the [product specification](../PRODUCT_SPEC.md), and the [v2 audit](../V2_AUDIT.md) before substantial changes.
 
 <a id="build"></a>
 
-## 构建与测试
+## Build and test
 
-使用完整 Xcode，选择 PhotoSelect scheme 和 My Mac。已提交的 `.xcodeproj` 可直接使用，`project.yml` 供需要 XcodeGen 的开发者参考。
+Use a full Xcode installation, the PhotoSelect scheme, and My Mac. The checked-in `.xcodeproj` is ready to use; `project.yml` is available for developers who prefer XcodeGen.
 
 ```bash
 open "PhotoSelect.xcodeproj"
 ```
 
-命令行构建：
+Build from the command line:
 
 ```bash
 DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer" \
@@ -20,7 +22,7 @@ DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer" \
   -destination 'platform=macOS' build
 ```
 
-运行测试：
+Run tests:
 
 ```bash
 DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer" \
@@ -28,20 +30,20 @@ DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer" \
   -destination 'platform=macOS' test
 ```
 
-只检查本地编译时，可在构建命令末尾加 `CODE_SIGNING_ALLOWED=NO`。这不验证分发签名、公证或实际运行权限。不要为处理本地签名问题关闭应用沙箱或扩大文件访问权限。
+Append `CODE_SIGNING_ALLOWED=NO` to the build command for a local compilation check without signing. This does not verify distribution signing, notarization, or runtime permissions. Do not disable App Sandbox or broaden file access to resolve a local signing problem.
 
 <a id="verification"></a>
 
-## 最近验证：2026-10-22
+## Latest verification: 2026-10-22
 
-| 检查 | 结果 | 范围 |
+| Check | Result | Scope |
 | :--- | :--- | :--- |
-| 本地构建 | 成功 | Xcode / macOS 26.5 SDK，Apple Silicon，`CODE_SIGNING_ALLOWED=NO` |
-| XCTest 目标编译 | 成功 | 测试代码完成编译与链接 |
-| XCTest 执行 | 环境阻断 | 沙箱阻止连接 `com.apple.testmanagerd.control`，未得到测试通过结果 |
-| 本轮实拍交互验收 | 未执行 | 需要在正常桌面环境重新验证完整流程 |
+| Local build | Succeeded | Xcode / macOS 26.5 SDK, Apple Silicon, `CODE_SIGNING_ALLOWED=NO` |
+| XCTest target compilation | Succeeded | Test code compiled and linked |
+| XCTest execution | Blocked by the environment | The execution sandbox prevented connection to `com.apple.testmanagerd.control`; no passing-suite result was obtained |
+| Real-shoot interaction check | Not performed in this pass | The complete workflow needs verification in a normal desktop session |
 
-本次执行的命令如下；结果文件位于执行机器的临时目录，未收入仓库。
+The commands used for this check are below. Result files were saved to the execution machine's temporary directory and are not checked in.
 
 ```bash
 DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer" \
@@ -57,63 +59,63 @@ DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer" \
   CODE_SIGNING_ALLOWED=NO test
 ```
 
-工程有一个未使用局部绑定的编译警告，位于 `AsyncPhotoView.swift`；不影响此次构建。构建成功不能替代实际选片体验和文件安全验收。
+The build emitted an unused local-binding warning in `AsyncPhotoView.swift`. It did not prevent compilation. A successful build does not establish interaction quality or file-safety acceptance.
 
-## 测试覆盖范围
+## Test coverage
 
-仓库内的 XCTest 包含以下场景；这里描述测试内容，不表示本轮全部执行通过。
+The XCTest target includes these scenarios. This list describes the tests, not a claim that they all passed in the latest run.
 
-- 决定日志持久化、重载与清理；稳定的文件路径身份。
-- Unreviewed 中连续决策、自动前进，以及关闭自动前进后离开当前筛选的选择状态。
-- 切换筛选后的撤销、决策计数、首末导航与快速连续导航。
-- 按当前筛选序列、下一张优先的预加载顺序。
-- JPEG 降采样与缓存复用、预览和检查档位、缩放边界。
-- 最近文件夹去重、八项上限、无效目录清理。
-- EXIF 读取，以及尚未开放到界面的非破坏性复制导出辅助函数。
+- Decision-journal persistence, reload, cleanup, and stable path-based asset identity.
+- Consecutive decisions in Unreviewed, auto-advance, and valid selection when a decision leaves the active filter with Auto Advance off.
+- Undo after switching filters, decision counts, first/last navigation, and rapid repeated navigation.
+- Active-filter, next-first prefetch ordering.
+- JPEG downsampling and cache reuse, preview/inspection tiers, and zoom bounds.
+- Recent-folder deduplication, the eight-folder limit, and unavailable-folder cleanup.
+- EXIF extraction and deferred non-destructive copy/export helpers.
 
-## 图像管线约束
+## Image-pipeline constraints
 
-| 请求档位 | 最大边长请求 | 用途 |
+| Request tier | Requested maximum dimension | Purpose |
 | :--- | ---: | :--- |
-| Filmstrip | 320 px | 缩略图条 |
-| Preview | 3200 px | 当前照片与相邻预加载，共用缓存档位 |
-| Inspection | 7680 px | 离开 Fit 后的放大检查 |
+| Filmstrip | 320 px | Filmstrip thumbnails |
+| Preview | 3200 px | Current photo and neighboring prefetch, sharing a cache tier |
+| Inspection | 7680 px | Detail inspection after leaving Fit |
 
-图像缓存目标上限为 256 MiB、96 项；`NSCache` 会自行决定淘汰时机，这些设置不等同于整个应用的内存上限。实际输出分辨率受源图和系统解码器限制。RAW 先尝试 Quick Look，再回退到 ImageIO。
+The image cache has a target cost limit of 256 MiB and a count limit of 96. `NSCache` controls eviction; these settings are not a cap on total application memory. Actual resolution depends on the source and system decoder. RAW requests try Quick Look first, then fall back to ImageIO.
 
-预加载遵循当前 `visibleAssets`，依次请求后面三张、前面两张。后台请求顺序执行，避免同时启动多项推测性 RAW 解码。目录扫描在后台运行，每批最多 128 个文件。
+Prefetch follows `visibleAssets`, requesting the next three frames and then the previous two. Speculative requests run sequentially to avoid fanning out many RAW decodes. Directory scanning runs in the background in batches of up to 128 files.
 
 <a id="storage"></a>
 
-## 数据存储与备份
+## Data storage and backup
 
-选片决定使用标准化文件路径作为键。`DecisionPersistence` 在应用当前用户域的 Application Support 下创建：
+Saved decisions use the standardized file path as their key. `DecisionPersistence` creates these files under the runtime user's Application Support directory:
 
 ```text
 PhotoSelect/decisions.json
 PhotoSelect/decisions.json.journal
 ```
 
-应用启用了 App Sandbox；使用当前 bundle identifier 构建运行时，这通常位于：
+With App Sandbox enabled and the current bundle identifier, this is typically:
 
 ```text
 ~/Library/Containers/com.example.PhotoSelect/Data/Library/Application Support/PhotoSelect/
 ```
 
-未沙箱化的运行环境通常位于 `~/Library/Application Support/PhotoSelect/`。实际位置以运行时解析的用户域目录为准；修改 bundle identifier 会改变沙箱容器。
+An unsandboxed environment typically resolves to `~/Library/Application Support/PhotoSelect/`. The actual location follows the runtime user-domain directory. Changing the bundle identifier changes the sandbox container.
 
-在退出应用后备份整个 `PhotoSelect` 数据目录，保留快照与日志两个文件。快照可能尚未生成，最新决定可能只在日志中。每 1,000 次日志变更会触发快照压缩。文件夹书签、最近文件夹和界面偏好保存在 UserDefaults 中；撤销栈只保存在内存中。
+Quit the app before backing up the entire PhotoSelect data directory, including both the snapshot and journal when present. The snapshot may not exist yet, and the latest decisions may only be in the journal. The journal compacts into a snapshot after 1,000 mutations. Folder bookmarks, recent folders, and preferences are stored in UserDefaults; the undo stack is session-only.
 
-## 手动验收建议
+## Suggested manual checks
 
-使用可丢弃的测试副本验证文件操作，不要拿唯一原片测试废纸篓流程。
+Use disposable copies for file-operation tests, never the only copy of an original.
 
-1. 打开数百张以上的混合素材，确认索引完成前可看到首批照片。
-2. 连续翻片、连续分级，验证所有筛选中选择状态与计数一致。
-3. 切换 Auto Advance，检查当前照片离开筛选后的导航与撤销。
-4. 捏合缩放、双指平移、回到 Fit，切换照片与窗口大小。
-5. 开关 Focus Mode 和缩略图条，验证快捷键继续工作。
-6. 退出并重开，确认决定与文件夹恢复。
-7. 用可丢弃副本检查废纸篓确认数量、成功移除与失败保留。
+1. Open several hundred mixed-format images and confirm that the first batch appears before indexing finishes.
+2. Navigate and rate repeatedly; verify selection and counts across all filters.
+3. Toggle Auto Advance and inspect navigation and undo when the current frame leaves its filter.
+4. Pinch, pan, return to Fit, switch photos, and resize the window.
+5. Toggle Focus Mode and the filmstrip; confirm that keyboard control remains available.
+6. Quit and relaunch; verify restored decisions and folder access.
+7. With disposable files, verify the Trash confirmation count, successful removal, and accurate retention of failures.
 
-历史测试截图留在本地 `SmokeTestArtifacts/`，因含个人照片已被 `.gitignore` 排除。首页图片为独立矢量示意，不作为验收截图。
+Historical screenshots remain in the local `SmokeTestArtifacts/` directory. They contain personal photographs and are excluded by `.gitignore`. The README artwork is a separate vector illustration, not verification evidence.

@@ -1,15 +1,17 @@
 # Security
 
-PhotoSelect 会读取用户选择的照片目录，并在明确确认后将淘汰原片移到 macOS 废纸篓。未经确认的文件移动、永久删除、越权访问，以及照片或位置信息意外外发，都属于需要优先处理的问题。
+**English** · [简体中文](SECURITY.zh-CN.md)
 
-## 报告方式
+PhotoSelect reads user-selected photo folders and can move rejected originals to the macOS Trash after explicit confirmation. Unexpected file movement, permanent deletion, access outside the authorized scope, and unintended disclosure of photographs or location data are priority concerns.
 
-请勿在公开 Issue 中上传私人照片、GPS、书签数据、完整文件路径或签名材料。
+## Reporting
 
-如果仓库的 **Security → Advisories → Report a vulnerability** 入口可用，请优先使用该私密入口。目前不承诺该功能已启用，也未设立独立安全邮箱。没有私密渠道时，可先创建不含敏感细节的 Issue，请维护者提供私下沟通方式，再交换复现材料。
+Do not upload private photographs, GPS coordinates, bookmark data, full personal paths, or signing material to public issues.
 
-报告应包含受影响提交、macOS 版本、触发步骤、实际影响，以及使用合成文件或可丢弃副本的最小复现。不要为了证明问题对唯一原片执行破坏性操作。
+If **Security → Advisories → Report a vulnerability** is available, use that private channel. Its availability is not guaranteed, and a dedicated security email has not been established. If no private channel is available, open an issue without sensitive details to request one from the maintainer before sharing reproduction material.
 
-## 维护范围
+Include the affected commit, macOS version, reproduction steps, observed impact, and a minimal example using synthetic files or disposable copies. Do not perform destructive tests on your only copy of a photograph.
 
-当前维护目标为 `main` 上的 MVP v2，尚无独立维护的稳定版本或响应时限承诺。文件安全与数据完整性问题优先于新增功能处理。
+## Maintenance scope
+
+The current maintenance target is MVP v2 on `main`. There are no separately maintained stable versions or committed response-time guarantees. File safety and data integrity take priority over new features.

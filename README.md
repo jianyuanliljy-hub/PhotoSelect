@@ -1,59 +1,59 @@
 <div align="center">
 
-<img src="docs/assets/mark.svg" width="80" height="80" alt="PhotoSelect 标志">
+<img src="docs/assets/mark.svg" width="80" height="80" alt="PhotoSelect logo">
 
 # PhotoSelect
 
-### 把注意力，留给照片。
+<p><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
 
-原生 macOS 选片工具 · 键盘分级 · 专注看图 · 本地保存
+### Find your best frames.
 
-A quiet, native workspace for finding the photographs worth keeping.
+Native macOS photo culling. Keyboard-driven decisions. Your photographs, kept local.
 
 <p>
-  <img src="https://img.shields.io/badge/macOS-14%2B-222222?style=flat-square&logo=apple&logoColor=white" alt="macOS 14 及以上">
-  <img src="https://img.shields.io/badge/Built_with-SwiftUI-F05138?style=flat-square&logo=swift&logoColor=white" alt="使用 SwiftUI 构建">
-  <img src="https://img.shields.io/badge/Dependencies-0-287D70?style=flat-square" alt="无第三方依赖">
-  <img src="https://img.shields.io/badge/Status-MVP_v2-94733D?style=flat-square" alt="开发阶段 MVP v2">
+  <img src="https://img.shields.io/badge/macOS-14%2B-222222?style=flat-square&logo=apple&logoColor=white" alt="macOS 14 or later">
+  <img src="https://img.shields.io/badge/Built_with-SwiftUI-F05138?style=flat-square&logo=swift&logoColor=white" alt="Built with SwiftUI">
+  <img src="https://img.shields.io/badge/Dependencies-0-287D70?style=flat-square" alt="No third-party dependencies">
+  <img src="https://img.shields.io/badge/Status-MVP_v2-94733D?style=flat-square" alt="MVP v2 development stage">
 </p>
 
 <p>
-  <a href="#quick-start">快速开始</a> ·
-  <a href="#workflow">选片流程</a> ·
-  <a href="#shortcuts">快捷键</a> ·
-  <a href="#safety">文件安全</a> ·
-  <a href="docs/DEVELOPMENT.md">开发指南</a> ·
-  <a href="CONTRIBUTING.md">参与贡献</a>
+  <a href="#quick-start">Quick start</a> ·
+  <a href="#workflow">Workflow</a> ·
+  <a href="#shortcuts">Shortcuts</a> ·
+  <a href="#safety">File safety</a> ·
+  <a href="docs/DEVELOPMENT.md">Development</a> ·
+  <a href="CONTRIBUTING.md">Contributing</a>
 </p>
 
-<img src="docs/assets/overview.svg" width="100%" alt="PhotoSelect 界面示意：左侧分类，中间大幅照片画布，底部四级决策快捷键">
+<img src="docs/assets/overview.svg" width="100%" alt="PhotoSelect interface illustration: sidebar filters, a large photo canvas, and four keyboard decisions">
 
-<sub>界面示意图，以矢量绘制；实际界面随 macOS 版本与窗口尺寸变化。</sub>
+<sub>Vector interface illustration. Actual appearance varies with macOS version and window size.</sub>
 
 </div>
 
 <br>
 
-打开一组拍摄素材，用方向键看图，用 `1 / 2 / 3 / 4` 作出判断。PhotoSelect 将未审阅、保留、精选和淘汰放进一个轻量工作区，让你把精力放在照片上。原图留在原来的文件夹，选片决定保存在本机。
+Open a shoot, browse with the arrow keys, and decide with `1 / 2 / 3 / 4`. PhotoSelect brings unreviewed frames, keepers, selects, and rejects into a focused native workspace. Originals stay in their folders; your decisions stay on your Mac.
 
-> **当前阶段：** MVP v2，供从源码构建与试用。基本选片流程已实现，真实大批量 RAW 素材的速度和稳定性仍需验证。构建、测试与已知限制见[开发指南](docs/DEVELOPMENT.md#verification)。
+> **Current stage:** MVP v2, available to build and try from source. The core culling workflow is implemented; performance and stability on large, real-world RAW shoots still need validation. See the [development guide](docs/DEVELOPMENT.md#verification) for build results, test status, and limitations.
 
-## 一张照片，一次判断
+## One photograph. One decision.
 
-| 能力 | 当前体验 |
+| Capability | What you can do today |
 | :--- | :--- |
-| **打开即看** | 直接读取文件夹，分批索引；支持 JPEG、HEIC、PNG、TIFF，以及系统能够解码的 RAW。 |
-| **键盘选片** | 四级决策、自动下一张、分类回看和撤销，减少鼠标操作。 |
-| **专注检查** | `F` 隐藏侧栏与缩略图条；触控板捏合缩放、双指平移，随时回到 Fit。 |
-| **继续上次进度** | 保存选片决定与偏好，恢复上次文件夹，提供最近八个文件夹入口。 |
-| **按浏览顺序预加载** | 预取当前筛选中的相邻照片，优先准备后续帧，复用主预览缓存。 |
-| **明确处理淘汰片** | Reject 先记录决定；在 Rejected 中确认具体数量后，才移到系统废纸篓。 |
+| **Open in place** | Browse a folder as it is indexed in batches. Supports JPEG, HEIC, PNG, TIFF, and RAW formats your system can decode. |
+| **Cull from the keyboard** | Make four-level decisions, auto-advance, revisit filtered picks, and undo without reaching for the mouse. |
+| **Inspect with focus** | Press `F` to hide the sidebar and filmstrip. Pinch to zoom, pan with two fingers, and return to Fit. |
+| **Pick up where you left off** | Restore decisions, preferences, and the last folder. Reopen up to eight recent shoots. |
+| **Prefetch the sequence you see** | Prepare neighboring frames in the active filter, next-first, using the same cache tier as the main preview. |
+| **Review before removal** | Reject records a decision. Originals move to the macOS Trash only after you confirm the exact count in Rejected. |
 
 <a id="quick-start"></a>
 
-## 快速开始
+## Quick start
 
-需要 **macOS 14 或更高版本**，以及支持目标系统的完整 **Xcode**。当前提供源码构建方式，尚未提供签名、公证的安装包。
+You need **macOS 14 or later** and a full **Xcode** installation that supports your target system. The app currently builds from source; a signed, notarized installer is not yet available.
 
 ```bash
 git clone https://github.com/jianyuanliljy-hub/PhotoSelect.git
@@ -61,116 +61,116 @@ cd "PhotoSelect"
 open "PhotoSelect.xcodeproj"
 ```
 
-在 Xcode 中选择 **PhotoSelect → My Mac**，点击 Run（`⌘R`）。如果提示签名配置，在 **Signing & Capabilities** 中选择自己的 Development Team。
+In Xcode, select **PhotoSelect → My Mac** and Run (`⌘R`). If signing setup is requested, choose your Development Team under **Signing & Capabilities**.
 
-仓库已包含 `.xcodeproj`，无需安装 XcodeGen。仓库目前为私有，克隆需要相应的 GitHub 访问权限。
+The `.xcodeproj` is checked in. XcodeGen is optional.
 
 <a id="workflow"></a>
 
-## 从一组照片，到值得留下的几张
+## From a full shoot to your strongest frames
 
-1. **打开拍摄文件夹。** 按 `⌘O`，照片会分批出现。默认进入 Unreviewed（未审阅），已有决定会恢复。
-2. **开始第一轮筛选。** 用 `← / →` 浏览，用 `1 / 2 / 3 / 4` 分级。自动下一张默认开启。
-3. **检查细节。** 捏合放大、双指平移；按 `⌘0` 回到完整画面。需要更大画布时按 `F`。
-4. **回看留下的照片。** 在 Hero、Select、Keep 中分别复查。误判时用 `⌘Z` 撤销，或按 `0` 清除决定。
-5. **最后处理淘汰片。** 进入 Rejected，检查后选择 Move to Trash，并确认文件数量。
+1. **Open a shoot.** Press `⌘O`. Photos appear in batches, saved decisions are restored, and the default view is Unreviewed.
+2. **Make your first pass.** Browse with `← / →` and rate with `1 / 2 / 3 / 4`. Auto Advance is on by default.
+3. **Inspect the details.** Pinch to zoom, pan with two fingers, and press `⌘0` to fit the image. Press `F` for more canvas space.
+4. **Revisit your picks.** Review Hero, Select, and Keep separately. Use `⌘Z` to undo or `0` to clear a decision.
+5. **Review your rejects last.** Open Rejected, inspect the set, then choose Move to Trash and confirm the file count if you want to remove them.
 
-未审阅数量归零后，界面会显示第一轮完成状态，可继续进入 Select 或 All Photos。分级只是 PhotoSelect 内部状态，当前界面尚未开放导出和 XMP 写入。
+When Unreviewed reaches zero, a first-pass-complete state links to Select and All Photos. Decisions remain PhotoSelect-local; export and XMP writing are not exposed in the current interface.
 
 <a id="shortcuts"></a>
 
-## 手留在键盘上
+## Keep your hands on the keyboard
 
-| 按键 | 操作 | 含义 |
+| Key | Decision | Meaning |
 | :---: | :--- | :--- |
-| `1` | Reject · 淘汰 | 暂时标记，原图留在原处 |
-| `2` | Keep · 保留 | 可用、值得保留 |
-| `3` | Select · 精选 | 值得进一步处理 |
-| `4` | Hero · 最佳 | 本组中的突出作品 |
-| `0` | Unreviewed · 未审阅 | 清除当前决定 |
+| `1` | Reject | Mark for review; the original stays in place |
+| `2` | Keep | A usable frame worth retaining |
+| `3` | Select | A strong frame worth editing |
+| `4` | Hero | A standout from the shoot |
+| `0` | Unreviewed | Clear the current decision |
 
 <details>
-<summary><strong>完整快捷键</strong></summary>
+<summary><strong>All keyboard shortcuts</strong></summary>
 
-| 操作 | 快捷键 |
+| Action | Shortcut |
 | :--- | :--- |
-| 上一张 / 下一张 | `←` / `→` |
-| 当前筛选的第一张 / 最后一张 | `⌘←` / `⌘→` |
-| 撤销上一次决定 | `⌘Z` |
-| 打开文件夹 | `⌘O` |
-| 切换专注模式 | `F` |
-| 显示 / 隐藏缩略图条 | `⌥⌘F` |
-| 放大 / 缩小 | `⌘+` / `⌘−` |
-| 适应窗口 | `⌘0` |
+| Previous / next photo | `←` / `→` |
+| First / last photo in the active filter | `⌘←` / `⌘→` |
+| Undo the last decision | `⌘Z` |
+| Open a folder | `⌘O` |
+| Toggle Focus Mode | `F` |
+| Show / hide the filmstrip | `⌥⌘F` |
+| Zoom in / out | `⌘+` / `⌘−` |
+| Fit to window | `⌘0` |
 
 </details>
 
 <a id="safety"></a>
 
-## 原图与决定，各有去处
+## Your originals stay yours
 
-**分级不移动原图。** Hero、Select、Keep 和 Reject 都是本地决定。只有 Rejected → Move to Trash 的确认操作会移动原文件，使用标准 macOS 废纸篓 API；移动失败的文件继续保留在列表中。
+**Decisions do not move originals.** Hero, Select, Keep, and Reject are local records. Only the confirmed Rejected → Move to Trash action moves files, using the standard macOS Trash API. Files that fail to move remain represented in the library.
 
-**选片记录在本机。** 决定通过 JSON 快照与追加日志保存；沙箱目录下的实际位置和备份建议见[数据存储说明](docs/DEVELOPMENT.md#storage)。文件夹访问使用 macOS 安全作用域书签（security-scoped bookmarks）。
+**Decisions are stored locally.** A JSON snapshot and append-only journal save your choices. See [data storage](docs/DEVELOPMENT.md#storage) for sandbox locations and backup guidance. Folder access uses macOS security-scoped bookmarks.
 
-**路径就是当前的关联依据。** 在外部移动或重命名原图后，已有决定无法自动关联到新路径。撤销历史只保留在当前运行期间，重启后不恢复。重要素材仍应保持独立备份。
+**File paths are the current identity.** Moving or renaming originals outside the app breaks their association with saved decisions. Undo history lasts for the current session and does not survive relaunch. Maintain an independent backup of important photographs.
 
-## 边界清楚，逐步完善
+## Development status
 
-| 状态 | 内容 |
+| Status | Scope |
 | :--- | :--- |
-| **已实现** | 单图选片、四级决策、分类导航、撤销、缩放与平移、专注模式、进度持久化、最近文件夹、确认后移入废纸篓 |
-| **需要继续验证** | 大批量混合 JPEG / RAW 的真实浏览延迟、长时间使用稳定性、不同相机 RAW 兼容性 |
-| **下一步优先** | 先验证真实拍摄素材的基础选片体验，再进入多图对比（Compare Mode） |
-| **暂未开放** | 同步对比、连拍分组、XMP、AI 选片、导出界面、完整 EXIF 面板、两阶段高质量 RAW 渲染 |
+| **Implemented** | Single-photo culling, four-level decisions, filtered navigation, undo, zoom and pan, Focus Mode, decision persistence, recent folders, and confirmed Trash operations |
+| **Needs validation** | Browsing latency on large mixed JPEG / RAW shoots, long-session stability, and camera-specific RAW compatibility |
+| **Next priority** | Validate the core loop on real shoots before building Compare Mode |
+| **Not yet exposed or implemented** | Synchronized comparison, burst grouping, XMP, AI culling, export UI, a full EXIF inspector, and two-stage high-quality RAW rendering |
 
-RAW 兼容性取决于当前 macOS 的 ImageIO / Quick Look 解码器。缩放倍率相对于 Fit，当前范围为 1×–8×，不等同于传感器原始像素的 100% 检查。目录扫描包含子文件夹，目前没有拍摄时间排序或排除子文件夹选项。
+RAW compatibility depends on the installed macOS ImageIO / Quick Look codecs. Zoom is relative to Fit, currently 1×–8×; it is not a sensor-pixel 100% inspection mode. Folder scanning includes subfolders, with no capture-time sorting or option to exclude subfolders yet.
 
-## 面向开发者
+## For developers
 
-项目使用 **SwiftUI + AppKit**，不引入第三方依赖。界面、选片状态、图像解码与持久化各有明确职责。
+PhotoSelect uses **SwiftUI + AppKit**, with no third-party dependencies. Views, culling state, image decoding, and persistence have distinct responsibilities.
 
 ```text
 PhotoSelect/
-├── Models/             照片身份、决定与元数据
-├── Stores/             选片状态、导航、撤销与文件操作
-├── Services/           解码缓存、决定持久化、书签与元数据读取
-└── Views/              SwiftUI 界面与 AppKit 缩放视图
-PhotoSelectTests/       XCTest 测试
-docs/                   开发说明与项目视觉资源
+├── Models/             Photo identity, decisions, and metadata
+├── Stores/             Culling state, navigation, undo, and file operations
+├── Services/           Image cache, decision persistence, bookmarks, and metadata
+└── Views/              SwiftUI views and the AppKit zoom surface
+PhotoSelectTests/       XCTest coverage
+docs/                   Development notes and project artwork
 ```
 
-图像管线提供 `320 px` 缩略图、`3200 px` 主预览和 `7680 px` 放大检查三个请求档位，实际图像尺寸受原图与解码器限制。预加载跟随当前筛选序列，按下一张优先的顺序执行，减少后台解码与前台浏览的竞争。
+The image pipeline requests `320 px` filmstrip thumbnails, `3200 px` previews, and `7680 px` inspection images. Actual output depends on the source and decoder. Prefetch follows the active filter, next-first, to reduce competition between speculative decoding and foreground browsing.
 
-[构建与测试](docs/DEVELOPMENT.md#build) · [验证记录](docs/DEVELOPMENT.md#verification) · [产品说明](PRODUCT_SPEC.md) · [v2 调整原因](V2_AUDIT.md) · [贡献指南](CONTRIBUTING.md) · [安全报告](SECURITY.md)
+[Build and test](docs/DEVELOPMENT.md#build) · [Verification record](docs/DEVELOPMENT.md#verification) · [Product specification](PRODUCT_SPEC.md) · [Why v2 changed](V2_AUDIT.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
 
 <details>
-<summary><strong>常见问题</strong></summary>
+<summary><strong>Frequently asked questions</strong></summary>
 
-**可以直接下载安装吗？**
+**Can I download an installer?**
 
-目前需要从源码构建，尚未提供签名、公证的安装包。
+Build from source for now. A signed, notarized installer is not yet available.
 
-**有 Windows 或 Linux 版本吗？**
+**Does it run on Windows or Linux?**
 
-当前仅面向 macOS，使用 SwiftUI、AppKit 和系统图像解码能力。
+The current app targets macOS and uses SwiftUI, AppKit, and system image codecs.
 
-**能够把精选照片导出到其他目录吗？**
+**Can I export my selected photographs?**
 
-仓库保留了复制导出的辅助代码与测试，当前 MVP 界面未开放该功能。
+Copy/export helpers and tests remain in the repository, but the current MVP does not expose an export workflow.
 
-**为什么没有测试 passing 徽章？**
+**Why is there no passing-tests badge?**
 
-2026-10-22 的本地构建成功，测试目标完成编译；测试运行器被执行环境的沙箱权限阻断，未获得完整测试通过结果。详细记录见[开发指南](docs/DEVELOPMENT.md#verification)。
+The local build succeeded on 2026-10-22 and the test target compiled. The execution sandbox prevented the test runner from starting, so no full passing-suite result is claimed. See the [verification record](docs/DEVELOPMENT.md#verification).
 
-**采用什么许可证？**
+**What is the license?**
 
-当前尚未选定开源许可证。仓库可见性与代码许可是两个独立设置；未来公开发布前需要明确授权条款。
+A license has not been selected yet. Licensing terms will be documented separately.
 
 </details>
 
 ---
 
 <div align="center">
-<sub>PhotoSelect · 摄影之后，精修之前。<br>Built for the space between shooting and editing.</sub>
+<sub>PhotoSelect · Built for the space between shooting and editing.</sub>
 </div>
